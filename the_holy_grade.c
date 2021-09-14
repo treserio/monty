@@ -53,6 +53,7 @@ void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
 	bridge_keeper ask[] = {
 		{"push", lancelot},
 		{"pall", robins_minstrels},
+		{"pint", i_want_to_sing},
 		{NULL, NULL} };
 
 	for (quester = 0; ask[quester].what_is_your_name; ++quester)
@@ -77,6 +78,8 @@ void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 		dprintf(2, "L%u: usage: push integer\n", ln_num);
 	else if (!strcmp(phrase[2], "ER_MALLOC"))
 		dprintf(2, "Error: malloc failed\n");
+	else if (!strcmp(phrase[2], "NO_PINT"))
+		dprintf(2, "L%u: can't pint, stack empty\n", ln_num);
 
 	/* free all values */
 	free(phrase[1]), free(phrase[0]), free(phrase), brave_sir_robin(bob);
