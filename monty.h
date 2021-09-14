@@ -58,4 +58,3 @@ void lancelot(laden_swallow **flock, unsigned int ln_num);
 void robins_minstrels(laden_swallow **flock, unsigned int ln_n);
 
 #endif
-

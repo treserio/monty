@@ -78,7 +78,9 @@ int word_count(char *phrase, char pause)
 int num_chk(char *num)
 {
 	int i;
-
+	/* consider negative values */
+	if (*num == '-')
+		++num;
 	for (i = 0; num && *num; ++num)
 	{
 		if (*num >= '0' && *num <= '9')
@@ -91,4 +93,3 @@ int num_chk(char *num)
 
 	return (i);
 }
-
