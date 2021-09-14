@@ -55,9 +55,9 @@ void lancelot(laden_swallow **flock, __attribute__((unused))unsigned int ln_n)
  */
 void robins_minstrels(laden_swallow **flock, unsigned int ln_n)
 {
-	(void)ln_n;
 	laden_swallow *bob;
 
+	(void)ln_n;
 	if (flock && *flock)
 		for (bob = *flock; bob; bob = bob->european)
 			printf("%d\n", bob->coconut);
