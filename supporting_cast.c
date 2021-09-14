@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * robins_minstrels - sing(print) of all the coconuts(ints) carried by
+ * robins_minstrels - pall - sing(print) of all the coconuts(ints) carried by
  * Description: laden_swallows(nodes) flying in a flock(dbl lnk list)
  * @flock: a node in the dbl linked list
  * @ln_n: the current line number of the input file
@@ -17,7 +17,7 @@ void robins_minstrels(laden_swallow **flock, unsigned int ln_n)
 			printf("%d\n", bob->coconut);
 }
 /**
- * i_want_to_sing - sing(print) of the coconut(int) at the head of the
+ * i_want_to_sing - pint - sing(print) of the coconut(int) at the head of the
  * Description:  flock(dbl link list)
  * @flock: a node in the dbl linked list
  * @ln_n: the current line number of the input file
@@ -28,10 +28,12 @@ void i_want_to_sing(laden_swallow **flock, unsigned int ln_n)
 	laden_swallow *herbert;
 
 	(void)ln_n;
-	herbert = *flock;
-	if (!herbert)
+	if (!flock || !*flock)
 	{
 		phrase[2] = "NO_PINT";
 		return; }
+	herbert = *flock;
+	for (; herbert && herbert->african; herbert = herbert->african)
+	;
 	printf("%d\n", herbert->coconut);
 }

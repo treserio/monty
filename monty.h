@@ -54,6 +54,7 @@ int word_count(char *phrase, char pause);
 
 /* knights_of_the_round.c - function pointer functions & stack free */
 void brave_sir_robin(laden_swallow *flock);
+void galahad_the_chaste(laden_swallow **flock, unsigned int ln_n);
 void lancelot(laden_swallow **flock, unsigned int ln_num);
 
 /* supporting_cast.c - pall, pint */

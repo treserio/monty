@@ -54,6 +54,7 @@ void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
 		{"push", lancelot},
 		{"pall", robins_minstrels},
 		{"pint", i_want_to_sing},
+		{"pop", galahad_the_chaste},
 		{NULL, NULL} };
 
 	for (quester = 0; ask[quester].what_is_your_name; ++quester)
@@ -80,6 +81,8 @@ void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 		dprintf(2, "Error: malloc failed\n");
 	else if (!strcmp(phrase[2], "NO_PINT"))
 		dprintf(2, "L%u: can't pint, stack empty\n", ln_num);
+	else if (!strcmp(phrase[2], "NO_POP"))
+		dprintf(2, "L%u: can't pop an empty stack\n", ln_num);
 
 	/* free all values */
 	free(phrase[1]), free(phrase[0]), free(phrase), brave_sir_robin(bob);
