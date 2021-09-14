@@ -1,4 +1,4 @@
-#include "monC_python.h"
+#include "monty.h"
 /**
  * prompter - splits phrase(char *) on pause(char) and adds to array
  * @phrase: the string to parse

@@ -1,4 +1,4 @@
-#include "monC_python.h"
+#include "monty.h"
 char **phrase = NULL;
 /**
  * main - read and run a MONTY style file
