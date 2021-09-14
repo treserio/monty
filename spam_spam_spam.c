@@ -84,3 +84,4 @@ int num_chk(char *num)
 		++i; }
 	return (i);
 }
+

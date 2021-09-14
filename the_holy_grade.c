@@ -80,3 +80,4 @@ void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 	free(phrase[1]), free(phrase[0]), free(phrase), brave_sir_robin(bob);
 	free(line), fclose(script), exit(EXIT_FAILURE);
 }
+
