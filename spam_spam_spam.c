@@ -1,18 +1,20 @@
-#include <monC_python.h>
+#include "monC_python.h"
 /**
- * narrator - splits phrase(char *) on pause(char) and adds to array
+ * prompter - splits phrase(char *) on pause(char) and adds to array
  * @phrase: the string to parse
  * @pause: char to use as delimiter
+ * @ln_len: length of the string
  * Return: array of parsed strings
  */
-char **narrator(char *phrase, char pause)
+char **prompter(char *phrase, char pause, int ln_len)
 {
-	int letter, st, words = 0, word, i;
+	int letter = 0, st = 0, words = 0, word = 0, i;
 	char **spoken;
-
+	/* rmv the '\n' char */
+	phrase[ln_len - 1] = '\0';
 	words = word_count(phrase, pause);
-	spoken = malloc(sizeof(char *) * (words + 2));
-	for (letter = 0, st = 0, words = 0, word = 0; phrase[letter]; ++letter)
+	spoken = malloc(sizeof(char *) * 3);
+	for (words = 0; phrase[letter] && words < 2; ++letter)
 	{
 		if (!word && phrase[letter] == ' ')
 			++st;
@@ -40,6 +42,7 @@ char **narrator(char *phrase, char pause)
 	spoken[words] = NULL;
 	if (words == 0)
 		spoken[1] = NULL;
+	spoken[2] = NULL;
 	return (spoken);
 }
 /**
@@ -62,6 +65,6 @@ int word_count(char *phrase, char pause)
 			word = 0;
 		}
 	}
-
+	/* handle the removal of the $ */
 	return (total);
 }

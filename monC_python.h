@@ -11,7 +11,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
-extern char **environ;
 
 /**
  * struct swallow_s - doubly linked list representation of a stack (or queue)
@@ -21,24 +20,38 @@ extern char **environ;
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct swallow_s
+typedef struct swallow
 {
-        int coconut;
-        struct stack_s *african;
-        struct stack_s *european;
+	int coconut;
+	struct swallow *african;
+	struct swallow *european;
 } laden_swallow;
 
 /**
- * struct questions_s - opcode and its function
+ * struct the_keeper_s - opcode and its function
  * @what_is_your_name: the opcode
  * @what_is_your_quest: function to handle the opcode
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct questions_s
+typedef struct the_keeper
 {
-        char *what_is_your_name;
-        void (*what_is_your_quest)(laden_swallow **flock, unsigned int ln_num);
-} bridge_of_death;
+	char *what_is_your_name;
+	void (*what_is_your_quest)(laden_swallow **flock, unsigned int ln_num);
+} questions;
+
+/* global head of my stack */
+extern char **phrase;
+
+/* the_holy_grade.c */
+void (*action(char **steps))(laden_swallow **, unsigned int);
+void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script);
+
+/* spam_spam_spam.c */
+char **prompter(char *phrase, char pause, int ln_len);
+int word_count(char *phrase, char pause);
+
+/* knights_of_the_round.c */
+void lancelot(laden_swallow **flock, unsigned int ln_num);
 
 #endif
