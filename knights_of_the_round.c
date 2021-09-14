@@ -23,7 +23,6 @@ void lancelot(laden_swallow **flock, __attribute__((unused))unsigned int ln_n)
 {
 	laden_swallow *bob;
 
-	printf("chk:%s\n", phrase[1]);
 	/* confirm all the chars in phrase1 are numbers */
 	if (!phrase[1] || !num_chk(phrase[1]))
 	{
