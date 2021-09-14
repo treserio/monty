@@ -14,32 +14,6 @@ void brave_sir_robin(laden_swallow *flock)
 	;
 }
 /**
- * galahad_the_chaste - pop - remove the top of the stack
- * @flock: a node in the dbl linked list
- * @ln_n: the current line number of the input file
- */
-void galahad_the_chaste(laden_swallow **flock, unsigned int ln_n)
-{
-	laden_swallow *bob;
-
-	(void) ln_n;
-	if (!flock || !*flock)
-	{
-		phrase[2] = "NO_POP";
-		return; }
-	bob = *flock;
-	for (; bob && bob->african; bob = bob->african)
-	;
-	if (bob->european)
-	{
-		*flock = bob->european;
-		(*flock)->african = NULL; }
-	else
-		*flock = NULL;
-
-	free(bob);
-}
-/**
  * lancelot - push - add(push) a laden_swallow(node) to top of dbl linked list
  * @flock: a node in the dbl linked list
  * @ln_n: the current line number of the input file
