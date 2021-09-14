@@ -77,11 +77,16 @@ int num_chk(char *num)
 {
 	int i;
 
-	for (i = 0; *num; ++num)
+	for (i = 0; num && *num; ++num)
 	{
 		if (*num >= '0' && *num <= '9')
-			continue;
-		++i; }
+			++i;
+		else
+		{
+			i = 0;
+			break; }
+	}
+
 	return (i);
 }
 

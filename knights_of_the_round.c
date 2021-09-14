@@ -8,7 +8,7 @@ void brave_sir_robin(laden_swallow *flock)
 {
 	laden_swallow *eraser;
 	/* head to top of the list */
-	for (; flock->african; flock = flock->african)
+	for (; flock && flock->african; flock = flock->african)
 	;
 	for (; flock; eraser = flock, flock = flock->european, free(eraser))
 	;
@@ -23,15 +23,16 @@ void lancelot(laden_swallow **flock, __attribute__((unused))unsigned int ln_n)
 {
 	laden_swallow *bob;
 
+	printf("chk:%s\n", phrase[1]);
 	/* confirm all the chars in phrase1 are numbers */
-	if (phrase[1] && strcmp(phrase[1], "0") && num_chk(phrase[1]))
+	if (!phrase[1] || !num_chk(phrase[1]))
 	{
-		phrase[2] = "0";
+		phrase[2] = "ER_USG_PUSH";
 		return; }
 	bob = malloc(sizeof(laden_swallow));
 	if (!bob)
 	{
-		phrase[2] = "1";
+		phrase[2] = "ER_MALLOC";
 		return; }
 	if (flock && !*flock)
 	{
@@ -58,6 +59,8 @@ void robins_minstrels(laden_swallow **flock, unsigned int ln_n)
 	laden_swallow *bob;
 
 	(void)ln_n;
+	for (; flock && *flock && (*flock)->african; *flock = (*flock)->african)
+	;
 	if (flock && *flock)
 		for (bob = *flock; bob; bob = bob->european)
 			printf("%d\n", bob->coconut);

@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 		if (scene)
 			scene(&flock, ln_num);
 		else
-			phrase[2] = "0";
+			phrase[2] = "ER_NO_FUNC";
 		/* exit case with errors */
 		if (phrase[2])
 		{
@@ -71,9 +71,11 @@ void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
  */
 void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 {
-	if (!strcmp(phrase[2], "0"))
+	if (!strcmp(phrase[2], "ER_NO_FUNC"))
 		dprintf(2, "L%u: unknown instruction %s\n", ln_num, phrase[0]);
-	else if (!strcmp(phrase[2], "1"))
+	else if (!strcmp(phrase[2], "ER_USG_PUSH"))
+		dprintf(2, "L%u: usage: push integer\n", ln_num);
+	else if (!strcmp(phrase[2], "ER_MALLOC"))
 		printf("Error: malloc failed\n");
 
 	/* free all values */
