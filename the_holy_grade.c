@@ -27,51 +27,47 @@ int main(int argc, char **argv)
 		if (!phrase[0] || !strcmp(phrase[0], "nop") || !phrase[0])
 		{
 			free(phrase[1]), free(phrase[0]), free(phrase);
-			continue;
-		}
+			continue; }
 		/* scene is the returned function pointer */
-		scene = action(phrase);
-		/* check if scene, then run(cut?) */
-		if (!scene)
-		{
-			/* probably free stuff if busted */
-			dprintf(2, "L%u: unknown instruction %s\n", ln_num, phrase[0]);
-			exit(EXIT_FAILURE); }
-		/* run command if present */
-		scene(&flock, ln_num);
+		scene = bridge_of_death(phrase);
+		/* check if scene & run, else unknown instruct error */
+		if (scene)
+			scene(&flock, ln_num);
+		else
+			phrase[2] = "0";
 		/* exit case with errors */
 		if (phrase[2])
-			ni(flock, ln_num, line, script);
-		free(phrase[1]), free(phrase[0]), free(phrase);
-	}
-	free(line), fclose(script);
-	return (0);
-}
+		{
+			ni(flock, ln_num, line, script); }
+		free(phrase[1]), free(phrase[0]), free(phrase); }
+	free(line), fclose(script), brave_sir_robin(flock);
+	return (0); }
 /**
- * action - check for an executable function from the first token of getline
- * @steps: array of strings tokened from getline
- * Return: 0 on success
+ * bridge_of_death - check for a function from the first token of getline
+ * @knight: array of strings tokened from getline
+ * Return: the function pointer identified
  */
-void (*action(char **steps))(laden_swallow **, unsigned int)
+void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
 {
 	unsigned int quester;
-
-	struct the_keeper ask[] = {
+	bridge_keeper ask[] = {
 		{"push", lancelot},
+		{"pall", robins_minstrels},
 		{NULL, NULL} };
 
 	for (quester = 0; ask[quester].what_is_your_name; ++quester)
 	{
-		if (!strcmp(ask[quester].what_is_your_name, steps[0]))
-			break;
-	}
+		if (!strcmp(ask[quester].what_is_your_name, knight[0]))
+			break; }
 
 	return (ask[quester].what_is_your_quest);
 }
 /**
- * action - check for an executable function from the first token of getline
- * @steps: array of strings tokened from getline
- * Return: 0 on success
+ * ni - handles error
+ * @bob: head laden_swallow(node) of our flock(dbl linked list)
+ * @ln_num: the current line in the input file
+ * @line: the input buffer for getline
+ * @script: the fd for the open file we're reading from
  */
 void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 {
@@ -79,7 +75,8 @@ void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 		dprintf(2, "L%u: unknown instruction %s\n", ln_num, phrase[0]);
 	else if (!strcmp(phrase[2], "1"))
 		printf("Error: malloc failed\n");
-	/* full stack free */
-	free(bob), free(phrase[1]), free(phrase[0]), free(phrase);
+
+	/* free all values */
+	free(phrase[1]), free(phrase[0]), free(phrase), brave_sir_robin(bob);
 	free(line), fclose(script), exit(EXIT_FAILURE);
 }

@@ -13,7 +13,7 @@
 #include <unistd.h>
 
 /**
- * struct swallow_s - doubly linked list representation of a stack (or queue)
+ * struct swallow - doubly linked list representation of a stack (or queue)
  * @coconut: integer
  * @african: points to the previous element of the stack (or queue)
  * @european: points to the next element of the stack (or queue)
@@ -28,30 +28,33 @@ typedef struct swallow
 } laden_swallow;
 
 /**
- * struct the_keeper_s - opcode and its function
+ * struct questions - opcode and its function
  * @what_is_your_name: the opcode
  * @what_is_your_quest: function to handle the opcode
- * Description: opcode and its function
+ * Description: list of questions asked by the_keeper of the bridge of death
  * for stack, queues, LIFO, FIFO Holberton project
  */
-typedef struct the_keeper
+typedef struct questions
 {
 	char *what_is_your_name;
 	void (*what_is_your_quest)(laden_swallow **flock, unsigned int ln_num);
-} questions;
+} bridge_keeper;
 
 /* global head of my stack */
 extern char **phrase;
 
-/* the_holy_grade.c */
-void (*action(char **steps))(laden_swallow **, unsigned int);
+/* the_holy_grade.c - main function and things directly related */
+void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int);
 void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script);
 
-/* spam_spam_spam.c */
+/* spam_spam_spam.c - string manipulation functions */
+int num_chk(char *num);
 char **prompter(char *phrase, char pause, int ln_len);
 int word_count(char *phrase, char pause);
 
-/* knights_of_the_round.c */
+/* knights_of_the_round.c - function pointer functions & stack free */
+void brave_sir_robin(laden_swallow *flock);
 void lancelot(laden_swallow **flock, unsigned int ln_num);
+void robins_minstrels(laden_swallow **flock, unsigned int ln_n);
 
 #endif

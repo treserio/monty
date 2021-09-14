@@ -68,3 +68,19 @@ int word_count(char *phrase, char pause)
 	/* handle the removal of the $ */
 	return (total);
 }
+/**
+ * num_chk - confirm all values of a string are numeric
+ * @num: char number to check
+ * Return: 0 if all numeric else num of chars outside of range
+ */
+int num_chk(char *num)
+{
+	int i;
+
+	for (i = 0; *num; ++num)
+	{
+		if (*num >= '0' && *num <= '9')
+			continue;
+		++i; }
+	return (i);
+}
