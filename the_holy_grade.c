@@ -76,7 +76,7 @@ void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 	else if (!strcmp(phrase[2], "ER_USG_PUSH"))
 		dprintf(2, "L%u: usage: push integer\n", ln_num);
 	else if (!strcmp(phrase[2], "ER_MALLOC"))
-		drintf(2, "Error: malloc failed\n");
+		dprintf(2, "Error: malloc failed\n");
 
 	/* free all values */
 	free(phrase[1]), free(phrase[0]), free(phrase), brave_sir_robin(bob);
