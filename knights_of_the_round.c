@@ -18,7 +18,7 @@ void bedevere(laden_swallow **flock, unsigned int ln_n)
 	if (bobs->european)
 	{
 		herberts = bobs->european;
-		if (herberts->coconut == 0)
+		if (bobs->coconut == 0)
 		{
 			phrase[2] = "ER_DIV_ZERO";
 			return; }
