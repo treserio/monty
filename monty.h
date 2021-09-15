@@ -1,6 +1,7 @@
 #ifndef _MON_C_PYTHON_
 #define _MON_C_PYTHON_
 
+#define _POSIX_C_SOURCE 200809L
 /* Cast of MonC_Python */
 #include <dirent.h>
 #include <errno.h>
@@ -67,6 +68,7 @@ void robins_minstrels(laden_swallow **flock, unsigned int ln_n);
 void tim_the_enchanter(laden_swallow **flock, unsigned int ln_n);
 
 /* arsenal.c */
+void catapult(laden_swallow **flock, unsigned int ln_n);
 void holy_hand_grenade(laden_swallow **flock, unsigned int ln_n);
 
 #endif
