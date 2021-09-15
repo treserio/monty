@@ -70,5 +70,6 @@ void tim_the_enchanter(laden_swallow **flock, unsigned int ln_n);
 /* arsenal.c */
 void catapult(laden_swallow **flock, unsigned int ln_n);
 void holy_hand_grenade(laden_swallow **flock, unsigned int ln_n);
+void line_of_monks(laden_swallow **flock, unsigned int ln_n);
 
 #endif
