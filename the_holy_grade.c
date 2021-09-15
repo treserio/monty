@@ -62,6 +62,7 @@ void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
 		{"div", bedevere},
 		{"mul", galahad},
 		{"mod", holy_hand_grenade},
+		{"pchar", catapult},
 		{NULL, NULL} };
 
 	for (quester = 0; ask[quester].what_is_your_name; ++quester)
@@ -104,6 +105,10 @@ void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 		dprintf(2, "L%u: can't mul, stack too short\n", ln_num);
 	else if (!strcmp(phrase[2], "ER_MOD"))
 		dprintf(2, "L%u: can't mod, stack too short\n", ln_num);
+	else if (!strcmp(phrase[2], "NO_PCHAR"))
+		dprintf(2, "L%u: can't pchar, stack empty\n", ln_num);
+	else if (!strcmp(phrase[2], "ER_PCHAR"))
+		dprintf(2, "L%u: can't pchar, value out of range\n", ln_num);
 	/* free all values */
 	free(phrase[1]), free(phrase[0]), free(phrase), brave_sir_robin(bob);
 	free(line), fclose(script), exit(EXIT_FAILURE);
