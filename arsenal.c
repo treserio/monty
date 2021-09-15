@@ -23,7 +23,7 @@ void holy_hand_grenade(laden_swallow **flock, unsigned int ln_n)
 		{
 			phrase[2] = "ER_DIV_ZERO";
 			return; }
-		herberts->coconut = herberts->coconut / bobs->coconut;
+		herberts->coconut = herberts->coconut % bobs->coconut;
 		killer_rabbit(flock, ln_n);
 	}
 	else
