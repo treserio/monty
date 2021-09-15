@@ -59,6 +59,7 @@ void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
 		{"swap", tim_the_enchanter},
 		{"add", patsy},
 		{"sub", the_black_knight},
+		{"div", bedevere},
 		{NULL, NULL} };
 
 	for (quester = 0; ask[quester].what_is_your_name; ++quester)
@@ -93,6 +94,10 @@ void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script)
 		dprintf(2, "L%u: can't add, stack too short\n", ln_num);
 	else if (!strcmp(phrase[2], "ER_SUB"))
 		dprintf(2, "L%u: can't sub, stack too short\n", ln_num);
+	else if (!strcmp(phrase[2], "ER_DIV"))
+		dprintf(2, "L%u: can't div, stack too short\n", ln_num);
+	else if (!strcmp(phrase[2], "ER_DIV_ZERO"))
+		dprintf(2, "L%u: division by zero\n", ln_num);
 	/* free all values */
 	free(phrase[1]), free(phrase[0]), free(phrase), brave_sir_robin(bob);
 	free(line), fclose(script), exit(EXIT_FAILURE);

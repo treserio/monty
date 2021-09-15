@@ -53,6 +53,7 @@ char **prompter(char *phrase, char pause, int ln_len);
 int word_count(char *phrase, char pause);
 
 /* knights_of_the_round.c - function pointer functions & stack free */
+void bedevere(laden_swallow **flock, unsigned int ln_n);
 void brave_sir_robin(laden_swallow *flock);
 void lancelot(laden_swallow **flock, unsigned int ln_num);
 void the_black_knight(laden_swallow **flock, unsigned int ln_n);
