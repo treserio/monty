@@ -53,23 +53,27 @@ int num_chk(char *num);
 char **prompter(char *phrase, char pause, int ln_len);
 int word_count(char *phrase, char pause);
 
-/* knights_of_the_round.c - function pointer functions & stack free */
+/* knights_of_the_round.c - div, sub, free, mul, push */
 void bedevere(laden_swallow **flock, unsigned int ln_n);
+void the_black_knight(laden_swallow **flock, unsigned int ln_n);
 void brave_sir_robin(laden_swallow *flock);
 void galahad(laden_swallow **flock, unsigned int ln_n);
 void lancelot(laden_swallow **flock, unsigned int ln_num);
-void the_black_knight(laden_swallow **flock, unsigned int ln_n);
 
-/* supporting_cast.c - pall, pint */
+
+/* supporting_cast.c - pint, pstr, add, pall, swap */
 void i_want_to_sing(laden_swallow **flock, unsigned int ln_n);
-void killer_rabbit(laden_swallow **flock, unsigned int ln_n);
+void line_of_monks(laden_swallow **flock, unsigned int ln_n);
 void patsy(laden_swallow **flock, unsigned int ln_n);
 void robins_minstrels(laden_swallow **flock, unsigned int ln_n);
 void tim_the_enchanter(laden_swallow **flock, unsigned int ln_n);
 
+/* supporting_cast2.c - rotl */
+void naughty_zoot(laden_swallow **flock, unsigned int ln_n);
+
 /* arsenal.c */
 void catapult(laden_swallow **flock, unsigned int ln_n);
 void holy_hand_grenade(laden_swallow **flock, unsigned int ln_n);
-void line_of_monks(laden_swallow **flock, unsigned int ln_n);
+void killer_rabbit(laden_swallow **flock, unsigned int ln_n);
 
 #endif

@@ -52,31 +52,28 @@ void holy_hand_grenade(laden_swallow **flock, unsigned int ln_n)
 		return; }
 }
 /**
- * line_of_monks - pstr - chants(print) 
- * Description: not really an arsenal but needed a place for it
+ * killer_rabbit - pop - bites(pop) the head off the first knight to approach!
  * @flock: a node in the dbl linked list
  * @ln_n: the current line number of the input file
  */
-void line_of_monks(laden_swallow **flock, unsigned int ln_n)
+void killer_rabbit(laden_swallow **flock, unsigned int ln_n)
 {
-	laden_swallow *bob;
-	int verses = 0;
+	laden_swallow *sir_bors;
 
-	(void)ln_n;
-	for (; flock && *flock && (*flock)->african; (*flock) = (*flock)->african)
-	;		
-	if (flock && *flock)
+	(void) ln_n;
+	if (!flock || !*flock)
 	{
-		for (bob = *flock; bob; bob = bob->european)
-			++verses;
+		phrase[2] = "ER_POP";
+		return; }
+	sir_bors = *flock;
+	for (; sir_bors && sir_bors->african; sir_bors = sir_bors->african)
+	;
+	if (sir_bors->european)
+	{
+		*flock = sir_bors->european;
+		(*flock)->african = NULL; }
+	else
+		*flock = NULL;
 
-		for (bob = *flock; verses; bob = bob->european, --verses)
-		{
-			if (bob->coconut >= 32 && bob->coconut <= 126)
-				printf("%c", bob->coconut);
-			else
-				break;
-		}
-	}
-	printf("\n");
+	free(sir_bors);
 }
