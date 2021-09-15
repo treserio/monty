@@ -59,9 +59,9 @@ void patsy(laden_swallow **flock, unsigned int ln_n)
 	{
 		phrase[2] = "ER_ADD";
 		return; }
-	left = *flock;
-	for (; left->african; left = left->african)
+	for (; flock && *flock && (*flock)->african; (*flock) = (*flock)->african)
 	;
+	left = *flock;
 	if (left->european)
 	{
 		right = left->european;
