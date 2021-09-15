@@ -12,7 +12,7 @@ void i_want_to_sing(laden_swallow **flock, unsigned int ln_n)
 	(void)ln_n;
 	if (!flock || !*flock)
 	{
-		phrase[2] = "NO_PINT";
+		phrase[2] = "ER_PINT";
 		return; }
 	herbert = *flock;
 	for (; herbert && herbert->african; herbert = herbert->african)
@@ -31,7 +31,7 @@ void killer_rabbit(laden_swallow **flock, unsigned int ln_n)
 	(void) ln_n;
 	if (!flock || !*flock)
 	{
-		phrase[2] = "NO_POP";
+		phrase[2] = "ER_POP";
 		return; }
 	sir_bors = *flock;
 	for (; sir_bors && sir_bors->african; sir_bors = sir_bors->african)
@@ -44,6 +44,34 @@ void killer_rabbit(laden_swallow **flock, unsigned int ln_n)
 		*flock = NULL;
 
 	free(sir_bors);
+}
+/**
+ * patsy - add - faithful patsy bangs(adds) coconuts(ints) together for that
+ * Description: sweet gallopy sound.
+ * @flock: a node in the dbl linked list
+ * @ln_n: the current line number of the input file
+ */
+void patsy(laden_swallow **flock, unsigned int ln_n)
+{
+	laden_swallow *left, *right;
+
+	if (!flock || !*flock)
+	{
+		phrase[2] = "ER_ADD";
+		return; }
+	left = *flock;
+	for (; left->african; left = left->african)
+	;
+	if (left->european)
+	{
+		right = left->european;
+		right->coconut = left->coconut + right->coconut;
+		killer_rabbit(flock, ln_n);
+	}
+	else
+	{
+		phrase[2] = "ER_ADD";
+		return; }
 }
 /**
  * robins_minstrels - pall - sing(print) of all the coconuts(ints) carried by
@@ -75,14 +103,14 @@ void tim_the_enchanter(laden_swallow **flock, unsigned int ln_n)
 	(void)ln_n;
 	if (!flock || !*flock)
 	{
-		phrase[2] = "NO_SWAP";
+		phrase[2] = "ER_SWAP";
 		return; }
 	bob = *flock;
 	for (; bob && bob->african; bob = bob->african)
 	;
 	if (!bob->european)
 	{
-		phrase[2] = "NO_SWAP";
+		phrase[2] = "ER_SWAP";
 		return; }
 	*flock = bob->european;
 	(*flock)->african = NULL;

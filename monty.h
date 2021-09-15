@@ -59,6 +59,7 @@ void lancelot(laden_swallow **flock, unsigned int ln_num);
 /* supporting_cast.c - pall, pint */
 void i_want_to_sing(laden_swallow **flock, unsigned int ln_n);
 void killer_rabbit(laden_swallow **flock, unsigned int ln_n);
+void patsy(laden_swallow **flock, unsigned int ln_n);
 void robins_minstrels(laden_swallow **flock, unsigned int ln_n);
 void tim_the_enchanter(laden_swallow **flock, unsigned int ln_n);
 
