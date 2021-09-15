@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	for (; (ln_len = getline(&line, &sz_line, script)) != EOF; ++ln_num)
 	{
 		phrase = prompter(line, ' ', ln_len);
-		if (!phrase[0] || !strcmp(phrase[0], "nop") || !phrase[0])
+		if (!phrase[0] || !strcmp(phrase[0], "nop") || phrase[0][0] == '#')
 		{
 			free(phrase[1]), free(phrase[0]), free(phrase);
 			continue; }
