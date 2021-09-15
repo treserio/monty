@@ -73,6 +73,33 @@ void brave_sir_robin(laden_swallow *flock)
 	;
 }
 /**
+ * galahad - mul - searching for the grail galahad's perils(ints) multiply
+ * @flock: a node in the dbl linked list
+ * @ln_n: the current line number of the input file
+ */
+void galahad(laden_swallow **flock, unsigned int ln_n)
+{
+	laden_swallow *left_arm, *right_arm;
+
+	if (!flock || !*flock)
+	{
+		phrase[2] = "ER_MUL";
+		return; }
+	for (; flock && *flock && (*flock)->african; (*flock) = (*flock)->african)
+	;
+	left_arm = *flock;
+	if (left_arm->european)
+	{
+		right_arm = left_arm->european;
+		right_arm->coconut = right_arm->coconut * left_arm->coconut;
+		killer_rabbit(flock, ln_n);
+	}
+	else
+	{
+		phrase[2] = "ER_MUL";
+		return; }
+}
+/**
  * lancelot - push - add(push) a laden_swallow(node) to top of dbl linked list
  * @flock: a node in the dbl linked list
  * @ln_n: the current line number of the input file

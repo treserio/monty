@@ -1,7 +1,7 @@
 #ifndef _MON_C_PYTHON_
 #define _MON_C_PYTHON_
 
-/* Cast */
+/* Cast of MonC_Python */
 #include <dirent.h>
 #include <errno.h>
 #include <stdarg.h>
@@ -55,6 +55,7 @@ int word_count(char *phrase, char pause);
 /* knights_of_the_round.c - function pointer functions & stack free */
 void bedevere(laden_swallow **flock, unsigned int ln_n);
 void brave_sir_robin(laden_swallow *flock);
+void galahad(laden_swallow **flock, unsigned int ln_n);
 void lancelot(laden_swallow **flock, unsigned int ln_num);
 void the_black_knight(laden_swallow **flock, unsigned int ln_n);
 
