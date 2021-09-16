@@ -60,7 +60,6 @@ void brave_sir_robin(laden_swallow *flock);
 void galahad(laden_swallow **flock, unsigned int ln_n);
 void lancelot(laden_swallow **flock, unsigned int ln_num);
 
-
 /* supporting_cast.c - pint, pstr, add, pall, swap */
 void i_want_to_sing(laden_swallow **flock, unsigned int ln_n);
 void line_of_monks(laden_swallow **flock, unsigned int ln_n);
@@ -70,6 +69,7 @@ void tim_the_enchanter(laden_swallow **flock, unsigned int ln_n);
 
 /* supporting_cast2.c - rotl */
 void naughty_zoot(laden_swallow **flock, unsigned int ln_n);
+void repressed_peasant(laden_swallow **flock, unsigned int ln_n);
 
 /* arsenal.c */
 void catapult(laden_swallow **flock, unsigned int ln_n);

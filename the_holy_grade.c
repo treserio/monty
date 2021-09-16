@@ -65,6 +65,7 @@ void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
 		{"pchar", catapult},
 		{"pstr", line_of_monks},
 		{"rotl", naughty_zoot},
+		{"rotr", repressed_peasant},
 		{NULL, NULL} };
 
 	for (quester = 0; ask[quester].what_is_your_name; ++quester)
