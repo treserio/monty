@@ -14,7 +14,7 @@ char **prompter(char *phrase, char pause, int ln_len)
 	if (phrase[ln_len - 1] == '\n')
 		phrase[ln_len - 1] = '\0';
 	words = word_count(phrase, pause);
-	spoken = malloc(sizeof(char *) * 3);
+	spoken = malloc(sizeof(char *) * 4);
 	for (words = 0; phrase[letter] && words < 2; ++letter)
 	{
 		if ((!word && phrase[letter] == ' ') || (!word && phrase[letter] == '\t'))
@@ -46,6 +46,7 @@ char **prompter(char *phrase, char pause, int ln_len)
 	if (words == 0)
 		spoken[1] = NULL;
 	spoken[2] = NULL;
+	spoken[3] = NULL;
 	return (spoken);
 }
 /**

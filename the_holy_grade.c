@@ -8,7 +8,7 @@ char **phrase = NULL;
  */
 int main(int argc, char **argv)
 {
-	char *line = 0;
+	char *line = 0, *excalibur = "stack";
 	FILE *script;
 	unsigned int ln_num = 1;
 	int ln_len = 0;
@@ -28,6 +28,7 @@ int main(int argc, char **argv)
 		{
 			free(phrase[1]), free(phrase[0]), free(phrase);
 			continue; }
+		phrase[3] = excalibur;
 		/* scene is the returned function pointer */
 		scene = bridge_of_death(phrase);
 		/* check if scene & run, else unknown instruct error */
@@ -39,6 +40,7 @@ int main(int argc, char **argv)
 		if (phrase[2])
 		{
 			ni(flock, ln_num, line, script); }
+		excalibur = phrase[3];
 		free(phrase[1]), free(phrase[0]), free(phrase);
 	}
 	free(line), fclose(script), brave_sir_robin(flock);
@@ -66,6 +68,8 @@ void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int)
 		{"pstr", line_of_monks},
 		{"rotl", naughty_zoot},
 		{"rotr", repressed_peasant},
+		{"stack", excalibur},
+		{"queue", excalibur},
 		{NULL, NULL} };
 
 	for (quester = 0; ask[quester].what_is_your_name; ++quester)

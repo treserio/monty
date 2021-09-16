@@ -106,8 +106,7 @@ void galahad(laden_swallow **flock, unsigned int ln_n)
  */
 void lancelot(laden_swallow **flock, __attribute__((unused))unsigned int ln_n)
 {
-	laden_swallow *bob;
-
+	laden_swallow *bob, *the_end;
 	/* confirm all the chars in phrase1 are numbers */
 	if (!phrase[1] || !num_chk(phrase[1]))
 	{
@@ -125,9 +124,21 @@ void lancelot(laden_swallow **flock, __attribute__((unused))unsigned int ln_n)
 		bob->european = NULL;
 		*flock = bob;
 		return; }
-	bob->coconut = atoi(phrase[1]);
-	bob->african = NULL;
-	bob->european = *flock;
-	(*flock)->african = bob;
-	*flock = bob;
+	else if (!strcmp(phrase[3], "stack"))
+	{
+		bob->coconut = atoi(phrase[1]);
+		bob->african = NULL;
+		bob->european = *flock;
+		(*flock)->african = bob;
+		*flock = bob; }
+	else
+	{
+		the_end = *flock;
+		for (; the_end->european; the_end = the_end->european)
+		;
+		bob->coconut = atoi(phrase[1]);
+		bob->african = the_end;
+		bob->european = NULL;
+		the_end->european = bob;
+	}
 }

@@ -20,6 +20,21 @@ void catapult(laden_swallow **flock, unsigned int ln_n)
 		return; }
 }
 /**
+ * excalibur - queue/stack - Arthur's legendary sword swings up("stack") or
+ * Description: down(queue)
+ * @flock: a node in the dbl linked list
+ * @ln_n: the current line number of the input file
+ */
+void excalibur(laden_swallow **flock, unsigned int ln_n)
+{
+	(void)flock;
+	(void)ln_n;
+	if (!strcmp(phrase[0], "queue"))
+		phrase[3] = "queue";
+	else
+		phrase[3] = "stack";
+}
+/**
  * holy_hand_grenade - mod - what's left(mod) after the grenade goes off
  * Description: on a laden_swallow(node)
  * @flock: a node in the dbl linked list
