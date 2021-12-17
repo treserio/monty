@@ -44,7 +44,7 @@ typedef struct questions
 /* global head of my stack */
 extern char **phrase;
 
-/* the_holy_grade.c - main function and things directly related */
+/* monC_Python.c - main function and things directly related */
 void (*bridge_of_death(char **knight))(laden_swallow **, unsigned int);
 void ni(laden_swallow *bob, unsigned int ln_num, char *line, FILE *script);
 
